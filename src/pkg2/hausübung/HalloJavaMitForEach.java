@@ -5,10 +5,17 @@
  */
 package pkg2.hausübung;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author szabo
  */
-public class HalloJavaMitForEach {
+public class HalloJavaMitForEach 
+{
+    List<String> strings = new ArrayList<String>();
+    
+    
     
 }
