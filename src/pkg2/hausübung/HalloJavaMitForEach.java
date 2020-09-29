@@ -6,7 +6,6 @@
 package pkg2.hausübung;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -14,8 +13,22 @@ import java.util.List;
  */
 public class HalloJavaMitForEach 
 {
-    List<String> strings = new ArrayList<String>();
+    ArrayList<String> liste = new ArrayList<>();
     
+    public void ausgabeListe()
+    {
+        liste.add("Hallo");
+        liste.add("Was");
+        liste.add("geht");
+        liste.add("?");
+        
+        for (int i = 0; i < liste.size(); i++) 
+        {
+            System.out.println(liste);
+        }
+        
+        
+    }
     
     
 }
