@@ -5,11 +5,8 @@
  */
 package pkg2.hausübung;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -106,6 +103,14 @@ public class NumberTester implements NumberTest
     @Override
     public boolean testNumber(int number) 
     {
+        int sqrt = (int) Math.sqrt(number) + 1;
+        for(int i = 2; i < sqrt; i++)
+        {
+            if(number % i == 0)
+            {
+                return false;
+            }
+        }
         return true; 
     }
     

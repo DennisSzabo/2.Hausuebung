@@ -5,7 +5,7 @@
  */
 package pkg2.hausübung;
 
-import java.io.IOException;
+import java.io.FileNotFoundException;
 
 /**
  *
@@ -14,9 +14,24 @@ import java.io.IOException;
 public class Hausübung {
 
     
-    public static void main(String[] args) throws IOException 
+    public static void main(String[] args) throws FileNotFoundException 
     {
-        
+        NumberTester nt = new NumberTester("Daten.txt");
+        nt.setOddEvenTester((int number) -> number % 2 == 0);
+        nt.setPrimeTester((int number) -> nt.testNumber(number));
+        nt.setPalindromeTester((int number) ->
+        {
+            String stringNumber = ""+number;
+            String reverse = "";
+            int stringLenght = stringNumber.length();
+            for (int i = stringLenght - 1 ; i <= 0; i--) 
+            {
+                reverse += stringNumber.charAt(i);
+                
+            }
+            return stringNumber.equals(reverse);
+        });
+        nt.testFile();
     }
     
 }
