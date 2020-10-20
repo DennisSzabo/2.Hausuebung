@@ -29,10 +29,6 @@ public class NumberTester implements NumberTest
         this.fileName = fileName;
     }
 
-    NumberTester() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
     public void setOddEvenTester(NumberTest oddTester)
     {
         this.oddTester = oddTester;
@@ -48,15 +44,63 @@ public class NumberTester implements NumberTest
         this.palindromeTester = palindromeTester;
     }
     
-    public void testFile() throws FileNotFoundException, IOException 
+    public void testFile() throws FileNotFoundException 
     {
-        FileReader file = new FileReader("C:\\Users\\szabo\\OneDrive\\Desktop\\Schule\\POS\\2. Hausübung\\Daten.txt");
-        BufferedReader br = new BufferedReader(file);
-        String zeile1 = br.readLine();
-        System.out.println(zeile1);
-        String zeile2 = br.readLine();
-        System.out.println(zeile2);
-        br.close();
+        Scanner scanner = new Scanner(new File(fileName));
+        scanner.useDelimiter("/n");
+        int testLenght = Integer.parseInt(scanner.nextLine());
+        for (int i = 0; i < testLenght; i++) 
+        {
+            if(scanner.hasNextLine())
+            {
+                String[] numbers  = scanner.nextLine().split(" ");
+                if(numbers.length > 1)
+                {
+                    int type = Integer.parseInt(numbers[0]);
+                    int number = Integer.parseInt(numbers[1]);
+                    switch(type)
+                    {
+                        case 1:
+                            
+                            if(oddTester.testNumber(number))
+                            {
+                                System.out.println("ODD");
+                            }
+                            else
+                            {
+                                System.out.println("NOT ODD");
+                            }
+                            break;
+                            
+                        case 2:
+                            
+                            if(primeTester.testNumber(number))
+                            {
+                                System.out.println("PRIME");
+                            }
+                            else
+                            {
+                                System.out.println("NOT PRIME");
+                            }
+                            break;
+                            
+                        case 3: 
+                            
+                            if(palindromeTester.testNumber(number))
+                            {
+                                System.out.println("PALINDROME");
+                            }
+                            else
+                            {
+                                System.out.println("NOT PALINDROME");
+                            }
+                            break;
+                            
+                            
+                    }
+                }
+            }
+        }
     }
 
     @Override
