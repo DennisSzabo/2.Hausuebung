@@ -9,9 +9,6 @@ package pkg2.hausübung;
  *
  * @author szabo
  */
-public interface CalculationOperation 
-{
-    Number calc(Number x, Number y);
-
+public class VectorCalculator {
     
 }
