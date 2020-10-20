@@ -5,6 +5,8 @@
  */
 package pkg2.hausübung;
 
+import java.io.IOException;
+
 /**
  *
  * @author szabo
@@ -12,7 +14,7 @@ package pkg2.hausübung;
 public class Hausübung {
 
     
-    public static void main(String[] args) 
+    public static void main(String[] args) throws IOException 
     {
         
     }

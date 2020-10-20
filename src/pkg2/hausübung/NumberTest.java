@@ -9,6 +9,7 @@ package pkg2.hausübung;
  *
  * @author szabo
  */
-public class NumberTest {
-    
+public interface NumberTest 
+{
+    boolean testNumber(int number);
 }
